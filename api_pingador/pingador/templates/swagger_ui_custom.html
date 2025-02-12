@@ -1,0 +1,25 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>API Documentation</title>
+    <link href="{% static 'swagger/swagger-ui.css' %}" rel="stylesheet">
+    <link href="{% static 'swagger/swagger-custom.css' %}" rel="stylesheet">
+</head>
+<body>
+    <div id="swagger-ui"></div>
+    <script src="{% static 'swagger/swagger-ui-bundle.js' %}"></script>
+    <script src="{% static 'swagger/swagger-ui-standalone-preset.js' %}"></script>
+    <script>
+        const ui = SwaggerUIBundle({
+            url: "{% url 'schema-json' format='.json' %}",
+            dom_id: '#swagger-ui',
+            presets: [
+                SwaggerUIBundle.presets.apis,
+                SwaggerUIStandalonePreset
+            ],
+            layout: "BaseLayout",
+        });
+    </script>
+</body>
+</html>

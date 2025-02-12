@@ -1,0 +1,234 @@
+openapi: 3.0.1
+info:
+  title: API de Ping
+  description: API para testar a conectividade de rede através do comando ping.
+  version: 1.0.0
+
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+
+security:
+  - bearerAuth: []
+
+servers:
+  - url: https://10.121.184.233
+    description: Servidor PRD Primário
+  - url: https://10.121.189.233
+    description: Servidor PRD Secundário
+  - url: https://10.121.1.217:4443
+    description: Servidor HML
+
+paths:
+  /v1_0_5/ping/:
+    post:
+      summary: Envia um comando de ping para o IP alvo e retorna os resultados
+      description: Realiza um teste de ping para o endereço IP fornecido e retorna os dados sobre a resposta. O Timeout em segundos para cada requisição de ping foi definido por padrão em 2 segundos. Intervalo de espera entre cada pacote enviado foi definido por padrão em 1 segundo. A quantidade padrão de pacotes enviados é de 5 pacotes.
+      operationId: pingHost
+      requestBody:
+        description: Parâmetros para realizar o teste de ping
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                numeric_host:
+                  type: string
+                  description: Endereço IP de destino
+              required:
+                - numeric_host
+      responses:
+        '200':
+          description: Sucesso - Resposta com os resultados do teste de ping.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  inputHost:
+                    type: string
+                    description: O endereço IP ou HOST de entrada
+                  host:
+                    type: string
+                    description: Host extraído da saída do comando do sistema
+                  numeric_host:
+                    type: string
+                    description: Endereço IP de destino
+                  alive:
+                    type: boolean
+                    description: Indica se o host existe (True) ou não (False)
+                  output:
+                    type: string
+                    description: Saída bruta do comando ping
+                  time:
+                    type: number
+                    format: float
+                    description: Tempo (em ms) da primeira resposta de ping bem-sucedida
+                  times:
+                    type: array
+                    items:
+                      type: number
+                      format: float
+                    description: Array com os tempos (em ms) de cada resposta de ping
+                  min:
+                    type: string
+                    description: Tempo mínimo registrado nas respostas
+                  max:
+                    type: string
+                    description: Tempo máximo registrado nas respostas
+                  avg:
+                    type: string
+                    description: Tempo médio das respostas
+                  packetLoss:
+                    type: string
+                    description: Percentual de perdas de pacotes (100% -> "100.000")
+                  stddev:
+                    type: string
+                    description: Desvio padrão dos tempos das respostas
+        '500':
+          description: Erro - Algo deu errado durante a execução do comando ping.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                    description: Detalhes sobre o erro ocorrido.
+        '401':
+          description: Token informado inválido
+  /v1_0_5/ping/vm/:
+    post:
+      summary: Recebe um circuito VPN VIP, envia um comando de ping para o IP alvo e retorna os resultados
+      description: Realiza um teste de ping para o endereço IP.Este endereço é obtido através de uma consulta ao IP NAT de Gerência dos circuitos VPN VIP.
+      operationId: pingHostVM
+      requestBody:
+        description: Parâmetros para realizar o teste de ping
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                localidade:
+                  type: string
+                  description: Localidade - Primeiro trecho da designação do circuito
+                  pattern: '^[A-Z]{3,4}$'
+                circuito:
+                  type: string
+                  description: Circuito - Segundo trecho da designação do circuito
+                  pattern: '^[0-9]{7,10}'
+              required:
+                - localidade
+                - circuito
+      responses:
+        '200':
+          description: Sucesso - Resposta com os resultados do teste de ping.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  inputHost:
+                    type: string
+                    description: O endereço IP ou HOST de entrada
+                  host:
+                    type: string
+                    description: Host extraído da saída do comando do sistema
+                  numeric_host:
+                    type: string
+                    description: Endereço IP de destino
+                  alive:
+                    type: boolean
+                    description: Indica se o host existe (True) ou não (False)
+                  output:
+                    type: string
+                    description: Saída bruta do comando ping
+                  time:
+                    type: number
+                    format: float
+                    description: Tempo (em ms) da primeira resposta de ping bem-sucedida
+                  times:
+                    type: array
+                    items:
+                      type: number
+                      format: float
+                    description: Array com os tempos (em ms) de cada resposta de ping
+                  min:
+                    type: string
+                    description: Tempo mínimo registrado nas respostas
+                  max:
+                    type: string
+                    description: Tempo máximo registrado nas respostas
+                  avg:
+                    type: string
+                    description: Tempo médio das respostas
+                  packetLoss:
+                    type: string
+                    description: Percentual de perdas de pacotes (100% -> "100.000")
+                  stddev:
+                    type: string
+                    description: Desvio padrão dos tempos das respostas
+        '400':
+          description: Campo obrigatório não informado
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  mensagem:
+                    type: string
+                    example: Campos obrigatórios não preenchidos.
+                  codigo_mensagem:
+                    type: string
+                    example: MSG057
+                  versao_obsoleta:
+                    example: false
+        '401':
+          description: Token informado inválido
+        '404':
+          description: Circuito não localizado
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  mensagem:
+                    type: string
+                    example: Circuito não localizado
+                  codigo_mensagem:
+                    type: string
+                    example: MSG700
+                  versao_obsoleta:
+                    example: false
+        '422':
+          description: O circuito pesquisado não é gerenciado, portanto não é possível executar o ping via Dados Fácil
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  mensagem:
+                    type: string
+                    example: IP de Gerencia não foi localizado.
+                  codigo_mensagem:
+                    type: string
+                    example: MSG733
+                  versao_obsoleta:
+                    example: false
+        '500':
+          description: Erro interno
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  mensagem:
+                    type: string
+                    example: Operação não realizada
+                  codigo_mensagem:
+                    type: string
+                    example: MSG096
+                  versao_obsoleta:
+                    example: false

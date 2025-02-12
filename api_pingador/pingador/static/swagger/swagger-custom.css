@@ -1,0 +1,68 @@
+/* Fundo do corpo */
+body {
+    background-color: #F8F9FA !important; /* Cinza claro */
+    font-family: 'Arial', sans-serif !important;
+}
+
+/* Cabeçalho principal */
+.swagger-ui .topbar {
+    background-color: #3C489C !important; /* Cor primária roxo-azulado */
+    border-bottom: 4px solid #44C55A !important; /* Verde */
+}
+
+.swagger-ui .topbar a {
+    color: #FFFFFF !important; /* Branco */
+}
+
+/* Botões */
+.swagger-ui .btn {
+    background-color: #44C55A !important; /* Verde */
+    border: 1px solid #44C55A !important;
+    color: #FFFFFF !important;
+}
+
+.swagger-ui .btn:hover {
+    background-color: #3C489C !important; /* Roxo-azulado */
+    border: 1px solid #3C489C !important;
+    color: #FFFFFF !important;
+}
+
+/* Texto */
+.swagger-ui .info h1 {
+    color: #3C489C !important; /* Cor primária */
+}
+
+.swagger-ui .info p {
+    color: #212529 !important; /* Preto */
+}
+
+/* Links */
+.swagger-ui a {
+    color: #3C489C !important;
+}
+
+/* Fundo dos cards e tabelas */
+.swagger-ui .opblock-summary {
+    background-color: #FFFFFF !important; /* Branco */
+    border-left: 5px solid #44C55A !important; /* Verde */
+}
+
+.swagger-ui .opblock-summary:hover {
+    background-color: #F8F9FA !important; /* Cinza claro */
+}
+
+/* Alterações nas seções de detalhes */
+.swagger-ui .opblock {
+    background-color: #FFFFFF !important;
+    border: 1px solid #DDE1E6 !important; /* Cinza claro */
+}
+
+.swagger-ui .opblock .opblock-summary {
+    color: #212529 !important; /* Preto */
+}
+
+/* Fundo do editor */
+.swagger-ui .editor textarea {
+    background-color: #F8F9FA !important;
+    color: #212529 !important;
+}

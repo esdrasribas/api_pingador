@@ -1,0 +1,266 @@
+#############################################################################################################
+
+Circuito: VSA5016422 | Status Code: 201 | Task ID: b1c4be4f-6162-4f81-ab22-e529fa6f2ce4 | Error: None
+Produto: VM
+Loc: VSA
+ccto: 5016422
+Resultado: ping_ok
+"inputHost": "100.92.126.202"
+Output api_pingador:
+PING 100.92.126.202 (100.92.126.202) 56(84) bytes of data.
+64 bytes from 100.92.126.202: icmp_seq=1 ttl=250 time=46.0 ms
+64 bytes from 100.92.126.202: icmp_seq=2 ttl=250 time=46.0 ms
+64 bytes from 100.92.126.202: icmp_seq=3 ttl=250 time=46.0 ms
+64 bytes from 100.92.126.202: icmp_seq=4 ttl=250 time=45.9 ms
+64 bytes from 100.92.126.202: icmp_seq=5 ttl=250 time=46.1 ms
+
+--- 100.92.126.202 ping statistics ---
+5 packets transmitted, 5 received, 0% packet loss, time 4000ms
+rtt min/avg/max/mdev = 45.906/46.047/46.169/0.086 ms
+
+Log pingador_portalcgrw:
+
+PING 192.168.14.14 1472 data bytes|..........|---- 192.168.14.14 PING Statistics ----|10 packets transmitted, 0 packets received, 100% packet loss
+
+
+#############################################################################################################
+
+Circuito: GOPA5010111 | Status Code: 201 | Task ID: 75ec52d6-e9bb-426b-ae9b-447bbc3ed458 | Error: None
+Produto: VM
+Loc: GOPA
+ccto: 5010111
+Resultado: ping_nok
+"inputHost": "00.127.26.138"
+Output api_pingador:
+PING 100.127.26.138 (100.127.26.138) 56(84) bytes of data.
+
+--- 100.127.26.138 ping statistics ---
+5 packets transmitted, 0 received, 100% packet loss, time 4000ms
+
+Log pingador_portalcgrw:
+PING 100.127.26.138 1472 data bytes|..........|---- 100.127.26.138 PING Statistics ----|10 packets transmitted, 0 packets received, 100% packet loss
+
+#############################################################################################################
+
+Circuito: RCE5577318 | Status Code: 201 | Task ID: d0d4af07-16ca-4ce5-878f-044c868e9f69 | Error: None
+Produto: VM
+Loc: RCE
+ccto: 5577318
+Resultado: ping_ok
+"inputHost": "100.92.86.179"
+Output api_pingador:
+PING 100.92.86.179 (100.92.86.179) 56(84) bytes of data.
+64 bytes from 100.92.86.179: icmp_seq=1 ttl=250 time=38.7 ms
+64 bytes from 100.92.86.179: icmp_seq=2 ttl=250 time=38.7 ms
+64 bytes from 100.92.86.179: icmp_seq=3 ttl=250 time=38.6 ms
+64 bytes from 100.92.86.179: icmp_seq=4 ttl=250 time=38.6 ms
+64 bytes from 100.92.86.179: icmp_seq=5 ttl=250 time=38.6 ms
+
+--- 100.92.86.179 ping statistics ---
+5 packets transmitted, 5 received, 0% packet loss, time 3999ms
+rtt min/avg/max/mdev = 38.607/38.675/38.779/0.186 ms
+
+Log pingador_portalcgrw:
+PING 10.214.127.34: 1472  data bytes, press CTRL_C to break|    ..........|  --- 10.214.127.34 ping statistics ---|10packet(s)transmitted, 0packet(s)received, 100.00%packetloss
+
+#############################################################################################################
+
+Circuito: DVL5070139 | Status Code: 201 | Task ID: da70ed1c-26c2-4b34-88fc-0a62bc915ee9 | Error: None
+Produto: VM
+Loc: DVL
+ccto: 5070139
+Resultado: ping_ok
+"inputHost": "100.92.55.73"
+Output api_pingador:
+PING 100.92.55.73 (100.92.55.73) 56(84) bytes of data.
+64 bytes from 100.92.55.73: icmp_seq=1 ttl=250 time=10.7 ms
+64 bytes from 100.92.55.73: icmp_seq=2 ttl=250 time=11.0 ms
+64 bytes from 100.92.55.73: icmp_seq=3 ttl=250 time=11.2 ms
+64 bytes from 100.92.55.73: icmp_seq=4 ttl=250 time=11.2 ms
+64 bytes from 100.92.55.73: icmp_seq=5 ttl=250 time=11.1 ms
+
+--- 100.92.55.73 ping statistics ---
+5 packets transmitted, 5 received, 0% packet loss, time 3999ms
+rtt min/avg/max/mdev = 10.784/11.078/11.262/0.196 ms
+
+Log pingador_portalcgrw:
+PING 192.168.2.210: 1472  data bytes, press CTRL_C to break|    !!!!!!!!!!|  --- 192.168.2.210 ping statistics ---|10packet(s)transmitted, 10packet(s)received, 0.00%packetloss
+
+#############################################################################################################
+
+Circuito: SPO7186457 | Status Code: 422 | Task ID: N/A | Error: {"errorKey":"CIRCUIT_ERROR","details":"O circuito deve ser um produto VPN VIP ou IP CONNECT"}
+Produto: DI
+Loc: SPO
+ccto: 7186457
+Resultado: ERRO 422 CIRCUIT_ERROR
+
+#############################################################################################################
+
+Circuito: JAMC5183322 | Status Code: 201 | Task ID: 48f3fa93-3c60-4ce7-8230-2fcc65105f94 | Error: None
+Produto: VM
+Loc: JAMC
+ccto: 5183322
+Resultado: ping_nok
+"inputHost": "100.92.183.182"
+Output api_pingador:
+PING 100.92.183.182 (100.92.183.182) 56(84) bytes of data.
+
+--- 100.92.183.182 ping statistics ---
+5 packets transmitted, 0 received, 100% packet loss, time 3999ms
+
+Log pingador_portalcgrw:
+PING 172.17.28.142 1472 data bytes|..........|---- 172.17.28.142 PING Statistics ----|10 packets transmitted, 0 packets received, 100% packet loss
+
+
+#############################################################################################################
+
+Circuito: RJO60016226 | Status Code: 422 | Task ID: N/A | Error: {"errorKey":"CIRCUIT_ERROR","details":"O circuito deve ser um produto VPN VIP ou IP CONNECT"}
+Produto: ME
+Loc: RJO
+ccto: 60016226
+Resultado: ERRO 422 CIRCUIT_ERROR
+
+#############################################################################################################
+
+Circuito: RJO60001214 | Status Code: 422 | Task ID: N/A | Error: {"errorKey":"CIRCUIT_ERROR","details":"O circuito deve ser um produto VPN VIP ou IP CONNECT"}
+Produto: ME
+Loc: RJO
+ccto: 60001214
+Resultado: ERRO 422 CIRCUIT_ERROR
+
+#############################################################################################################
+
+Circuito: RCE5573500 | Status Code: 201 | Task ID: 8cc41f1e-4856-4b1f-b407-6d7c783ac03c | Error: None
+Produto: VM
+Loc: RCE
+ccto: 5573500
+Resultado: ping_nok
+"inputHost": "100.92.39.255"
+Output api_pingador:
+PING 100.92.39.255 (100.92.39.255) 56(84) bytes of data.
+From 200.141.237.50 icmp_seq=1 Destination Net Unreachable
+From 200.141.237.50 icmp_seq=2 Destination Net Unreachable
+From 200.141.237.50 icmp_seq=3 Destination Net Unreachable
+From 200.141.237.50 icmp_seq=4 Destination Net Unreachable
+From 200.141.237.50 icmp_seq=5 Destination Net Unreachable
+
+--- 100.92.39.255 ping statistics ---
+5 packets transmitted, 0 received, +5 errors, 100% packet loss, time 4004ms
+
+Log pingador_portalcgrw:
+PING 100.96.0.158 1472 data bytes|..........|---- 100.96.0.158 PING Statistics ----|10 packets transmitted, 0 packets received, 100% packet loss
+
+#############################################################################################################
+
+Circuito: ULNS5010471 | Status Code: 201 | Task ID: d51411cc-df9f-4f67-b47d-cd320a17f413 | Error: None
+Produto: VM
+Loc: ULNS
+ccto: 5010471
+Resultado: ping_nok
+"inputHost": "100.127.127.6"
+Output api_pingador:
+PING 100.127.127.6 (100.127.127.6) 56(84) bytes of data.
+
+--- 100.127.127.6 ping statistics ---
+5 packets transmitted, 0 received, 100% packet loss, time 3999ms
+
+Log pingador_portalcgrw:
+retorno_pingador
+
+#############################################################################################################
+
+Circuito: RJO60004328 | Status Code: 422 | Task ID: N/A | Error: {"errorKey":"CIRCUIT_ERROR","details":"O circuito deve ser um produto VPN VIP ou IP CONNECT"}
+Produto: DM
+Loc: RJO
+ccto: 60004328
+Resultado: ERRO 422 CIRCUIT_ERROR
+
+#############################################################################################################
+
+Circuito: SIP5013049 | Status Code: 201 | Task ID: 36127001-ec82-4407-b73e-4eececa82793 | Error: None
+Produto: CN
+Loc: SIP
+ccto: 5013049
+Resultado: ping_nok
+"inputHost": "200.195.64.222"
+Output api_pingador:
+PING 200.195.64.222 (200.195.64.222) 56(84) bytes of data.
+
+--- 200.195.64.222 ping statistics ---
+5 packets transmitted, 0 received, 100% packet loss, time 4004ms
+Log pingador_portalcgrw:
+retorno_pingador
+
+#############################################################################################################
+
+Circuito: SIL5010341 | Status Code: 201 | Task ID: 11e08212-ccf9-4306-89c2-73c3a377680a | Error: None
+Produto: CN
+Loc: SIL
+ccto: 5010341
+Resultado: ping_nok
+"inputHost": "200.151.217.246"
+Output api_pingador:
+PING 200.151.217.246 (200.151.217.246) 56(84) bytes of data.
+
+--- 200.151.217.246 ping statistics ---
+5 packets transmitted, 0 received, 100% packet loss, time 3999ms
+Log pingador_portalcgrw:
+retorno_pingador
+
+#############################################################################################################
+
+Circuito: CHIA5011105 | Status Code: 201 | Task ID: c3971fe1-8cdb-4a24-a2dd-0de709bc29d9 | Error: None
+Produto: VM
+Loc: CHIA
+ccto: 5011105
+Resultado: ping_ok
+"inputHost": "200.151.217.246"
+Output api_pingador:
+PING 100.92.85.193 (100.92.85.193) 56(84) bytes of data.
+64 bytes from 100.92.85.193: icmp_seq=1 ttl=248 time=112 ms
+64 bytes from 100.92.85.193: icmp_seq=2 ttl=248 time=112 ms
+64 bytes from 100.92.85.193: icmp_seq=3 ttl=248 time=112 ms
+64 bytes from 100.92.85.193: icmp_seq=4 ttl=248 time=112 ms
+64 bytes from 100.92.85.193: icmp_seq=5 ttl=248 time=112 ms
+
+--- 100.92.85.193 ping statistics ---
+5 packets transmitted, 5 received, 0% packet loss, time 4000ms
+rtt min/avg/max/mdev = 112.130/112.226/112.448/0.115 ms
+Log pingador_portalcgrw:
+PING 172.17.176.234 1472 data bytes|..........|---- 172.17.176.234 PING Statistics ----|10 packets transmitted, 0 packets received, 100% packet loss
+
+#############################################################################################################
+
+Circuito: MPM5010528 | Status Code: 201 | Task ID: 4b98ad32-26dc-4a8e-87ce-1d799a98c187 | Error: None
+Produto: VM
+Loc: MPM
+ccto: 5010528
+Resultado: ping_nok
+"inputHost": "100.92.197.168"
+Output api_pingador:
+PING 100.92.197.168 (100.92.197.168) 56(84) bytes of data.
+
+--- 100.92.197.168 ping statistics ---
+5 packets transmitted, 0 received, 100% packet loss, time 3999ms
+
+Log pingador_portalcgrw:
+Sending 10, 100-byte ICMP Echos to 10.201.115.146, timeout is 2 seconds:|..........|Success rate is 0 percent (0/10)
+
+#############################################################################################################
+
+Circuito: COS5011369 | Status Code: 201 | Task ID: 2672ad49-df94-4943-97ef-f2b3f9209c66 | Error: None
+Produto: CN
+Loc: COS
+ccto: 5011369
+Resultado: ping_nok
+"inputHost": "201.18.77.78"
+Output api_pingador:
+PING 201.18.77.78 (201.18.77.78) 56(84) bytes of data.
+
+--- 201.18.77.78 ping statistics ---
+5 packets transmitted, 0 received, 100% packet loss, time 4000ms
+
+Log pingador_portalcgrw:
+PING 201.18.77.78 1472 data bytes|..........|---- 201.18.77.78 PING Statistics ----|10 packets transmitted, 0 packets received, 100% packet loss
+
+#############################################################################################################
